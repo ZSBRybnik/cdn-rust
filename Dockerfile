@@ -1,5 +1,5 @@
 FROM rustlang/rust:nightly
-ADD ./cdn-rust /cdn
+ADD . /cdn
 WORKDIR /cdn
 RUN cargo build --release
 RUN mv ./target/release/cdn_rust .
