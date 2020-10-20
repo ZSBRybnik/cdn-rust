@@ -1,5 +1,5 @@
-FROM rustlang/rust:nightly
-ADD ./cdn-rust /cdn
-ADD ./public /public
+FROM rust:latest
+ADD . /cdn
 WORKDIR /cdn
+EXPOSE 5002
 CMD ["cargo", "run"]

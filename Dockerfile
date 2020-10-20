@@ -1,7 +1,10 @@
-FROM rustlang/rust:nightly
+FROM rust:latest AS build
 ADD . /cdn
 WORKDIR /cdn
 RUN cargo build --release
-RUN mv ./target/release/cdn_rust .
-RUN rm -rf target
-CMD ["./cdn_rust"]
+FROM debian:buster-slim
+COPY --from=build /cdn/target/release/cdn_rust /home/cdn_rust
+COPY --from=build /cdn/Rocket.toml /home/Rocket.toml
+WORKDIR /home
+EXPOSE 5002
+CMD ["/home/cdn_rust"]
