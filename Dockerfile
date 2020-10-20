@@ -1,4 +1,4 @@
-FROM rust:latest AS build
+FROM rustlang/rust:nightly AS build
 ADD . /cdn
 WORKDIR /cdn
 RUN cargo build --release

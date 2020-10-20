@@ -1,4 +1,4 @@
-FROM rust:latest
+FROM rustlang/rust:nightly
 ADD . /cdn
 WORKDIR /cdn
 EXPOSE 5002
