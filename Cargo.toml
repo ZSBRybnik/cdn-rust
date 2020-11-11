@@ -5,6 +5,6 @@ authors = ["Krzysztof Zawisła <snowdropcurvemaster@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-rocket = "0.4.5"
+rocket = "0.4.6"
 rocket_contrib = "0.4.5"
 rocket_cors = "0.5.1"
